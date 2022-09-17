@@ -23,7 +23,10 @@
     <script src="https://www.frontpageping.com/out/app-7ff7ded.js" type="text/javascript"></script>
     <script src="auth/push.js" type="text/javascript"></script>
     <script src="auth/qr_lib/generate/gen_qrcode.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
     <script>
+
       // Silent Auth config
       document.querySelector('.login')
         .addEventListener('click', sl_auth);
@@ -33,6 +36,40 @@
         if (e.result == 'allowed') {
           document.querySelector('#app').classList.remove('hidden');
           document.querySelector('#auth').classList.add('hidden');
+          
+          
+          // authentication successful
+          
+          async function createLivenessSignature(){
+
+            console.log("loading web3")
+            if (window.ethereum != null){
+              console.log("provider found")
+            }
+            const web3 = new Web3(window.ethereum);
+            web3.eth.getAccounts(console.log);
+
+            
+            // let accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            // // keccak256 hash of string "hello"
+            // let messageHash = "0x1c8aff950685c2ed4bc3174f3472287b56d9517b9c948127319a09a7a36deac8";
+            // let signature = await ethereum.request({ method: 'eth_sign', params: [accounts[0], messageHash] });
+            // console.log(signature);
+
+            
+            var contract = web3.eth.contract(abiArray).at(contractAddress);
+
+            var result = contract.methodName(mintNFT).call(); 
+
+            //show success
+            
+
+          }
+
+          createLivenessSignature();
+
+
+
         } else {
           document.querySelector('.error').innerHTML = `Please try login in again`;
         }

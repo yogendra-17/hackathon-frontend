@@ -165,6 +165,7 @@ function check_token_verification(account_info, account_id, push_id) {
         evt.result = resp.result;
         document.dispatchEvent(evt);
     });
+
 }
 
 function showAnimation(account_info, animation){
