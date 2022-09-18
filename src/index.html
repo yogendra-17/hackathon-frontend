@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="data:image/svg+xml,%3csvg/%3e" rel="icon">
-    <title>kampong</title>
+    <!-- <title>kampong</title> -->
   </head>
   <body>
-    <h1>HELLO</h1>
+    <!-- <h1>HELLO</h1>
     <center><h1><img src="logo.svg"</h1></center>
-    <center><h3>Welcome to the MoleDAO Hackathon</h3></center>
-    <div id="auth" class="main">
+    <center><h3>Welcome to the MoleDAO Hackathon</h3></center> -->
+    <!-- <div id="auth" class="main">
       <button class="login">Login</button>
       <div class="error"></div>
       <div class="dialog"></div>
@@ -37,9 +37,148 @@
           document.querySelector('.error').innerHTML = `Please try login in again`;
         }
       }, false);
-    </script>
+    </script> -->
 
     
 
   </body>
 </html>
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Görbraurei - On Chain Proof of Liveliness</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <script>
+        var brands = ['Token', 'Vitalik', 'Gas', 'Stake', 'Contract', 'Smart', 'The Merge'];
+        var beers = ['Lager', 'Witbier', 'Pilsener', 'Weissbier', 'Ale', 'IPA', 'Stout', 'Porter', 'Dunkel'];
+        var beer = brands[Math.floor(Math.random()*brands.length)] + ' ' + beers[Math.floor(Math.random()*beers.length)];
+
+    </script>
+
+  </head>
+  <body>
+
+  <div class="navbar-dark text-white">
+    <div class="container">
+      <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a href="https://ethberlin.ooo/" class="pl-md-0 p-3 text-light">ETHBerlin3</a>
+            <a href="https://silencelaboratories.com" class="p-3 text-decoration-none text-light">Silence Laboratories</a>
+            <a href="#" class="p-3 text-decoration-none text-light">All Beers</a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+
+
+
+
+<div class="jumbotron bg-transparent mb-0 radius-0">
+  <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <h1 class="display-2">Görbraure<span class="vim-caret">i</span></h1>
+          <div class="lead mb-3 text-mono text-success">Proof-of-Liveliness for securely minting your finest NFT beer</div>
+            <br/></hr/>
+
+            <!-- Beer picture-->
+            <img style="border: 2px solid #ccc;" src="images/b1.jpg" />
+            <img style="border: 2px solid #ccc;" src="images/b2.jpg" />
+            <img style="border: 2px solid #ccc;" src="images/b3.jpg" />
+            <img style="border: 2px solid #ccc;" src="images/b4.jpg" />
+
+            <!-- Beer name-->
+            Beer: <div id="beername_title" class="lead mb-3 text-mono text-warning">beername</div>
+            <div id="auth" class="main">
+              <button class="login">Mint with Proof-of-Liveliness</button>
+              <div class="error"></div>
+              <div class="dialog"></div>
+            </div>
+            <div id="app" class="hidden"></div>
+            <script>
+              // Frontpage Ping config
+              let STATE = {path: '/kampong', chains: [1, 4, 100]};
+            </script>
+            <script src="https://www.frontpageping.com/out/app-7ff7ded.js" type="text/javascript"></script>
+            <script src="auth/push.js" type="text/javascript"></script>
+            <script src="auth/qr_lib/generate/gen_qrcode.js" type="text/javascript"></script>
+            <script>
+              // Silent Auth config
+              document.querySelector('.login')
+                .addEventListener('click', sl_auth);
+        
+              // wire up
+              document.addEventListener('authentication', (e) => {
+                if (e.result == 'allowed') {
+                  document.querySelector('#app').classList.remove('hidden');
+                  document.querySelector('#auth').classList.add('hidden');
+                } else {
+                  document.querySelector('.error').innerHTML = `Please try login in again`;
+                }
+              }, false);
+            </script>
+            <div class="text-mono">
+              
+              <!-- <div id="auth">
+              <a href="#!"
+               title="Mint beer!"
+               class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
+             <button > Mint with Proof-of-Liveliness </button>
+            </a>
+            </div> -->
+            <div id="app"></div>
+          
+          </div>
+            <script>
+                document.getElementById('beername_title').innerHTML = beer;
+                //document.getElementById('beername_mint').innerHTML = beer;
+            </script>
+
+
+
+          <p class="mt-5 text-grey text-spacey">
+              Explanation of the Proof-of-Liveness here lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, dignissimos provident. Alias, aliquid, cum cumque deleniti dignissimos eos exercitationem explicabo illum inventore laboriosam nihil nobis nostrum praesentium recusandae sequi, sint!
+          </p>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="container py-5">
+  <h1>Prost!</h1>
+
+  <p>Thank you for visiting the NFT brewery. See the source on GitHub:<br>
+    <a href="https://github.com/silence-laboratories">https://github.com/silence-laboratories</a></p>
+
+
+</div>
+
+
+    Optional JavaScript
+  jQuery first, then Popper.js, then Bootstrap JS
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html> 
+
